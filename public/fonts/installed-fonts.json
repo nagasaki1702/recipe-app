@@ -1,0 +1,10 @@
+{
+    "ipag": {
+        "normal": "ipag_normal_48b0341a9f44cadb8718d975610495a5",
+        "bold": "\/Users\/apple\/Laravel\/recipe-app\/storage\/fonts\/\/ipag_bold_48b0341a9f44cadb8718d975610495a5"
+    },
+    "meiryo": {
+        "normal": "\/Users\/apple\/Laravel\/recipe-app\/storage\/fonts\/\/meiryo_normal_47adf1abeca441f0cc61e40a47c45f90",
+        "bold": "meiryo_bold_3dce570c7bd82d815e274ca488f8a7ae"
+    }
+}

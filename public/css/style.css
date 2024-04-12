@@ -1,0 +1,280 @@
+/* 書体 */
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
+
+body{
+    font-family: "Yomogi", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: inherit;
+    color: inherit;
+    /* 追加のプロパティを適用したい場合はここに追加します */
+}
+
+.custom-form {
+    font-family: "Yomogi", Arial, sans-serif; /* フォントファミリーを設定 */
+    color: #333; /* テキストカラーを設定 */
+}
+
+/* ファイル選択フィールドのプレースホルダーテキストを変更 */
+.custom-form input[type="file"]::placeholder {
+    font-family: "Yomogi", Arial, sans-serif !important; /* フォントファミリーを設定 */
+    color: #333 !important; /* テキストカラーを設定 */
+}
+
+
+.section-padding{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.modal {
+    z-index: 1050; /* 他の要素よりも大きい値を設定 */
+}
+
+.modal-backdrop {
+    z-index: 1040; /* モーダルよりも少し小さい値に設定 */
+}
+
+
+
+/* セクション間の区切り */
+.divider{
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.1);
+}
+
+a{
+    text-decoration: none;
+}
+
+.border-hover{
+    transition: all 0.5s ease-out;
+    border: 2px solid transparent;
+}
+
+.border-hover:hover{
+    border-color: var(--bs-warning-bg-subtle);
+}
+
+/* イントロセクション */
+.intro-section p {
+    max-width: 560px;
+}
+
+/* ナビゲーションバー */
+.navbar{
+    transition: all 0.5s ease-out;
+    border-bottom: none; 
+    /* 下線を非表示にする */
+
+}
+
+/* ナブバーリンクから下線を削除 */
+.navbar-nav a {
+    text-decoration: none;
+}
+
+.navbar .navbar-nav .nav-link{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.navbar .navbar-nav .nav-link.ative{
+    color: var(--bs--info);
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+/* ドロップダウンメニュー内の画像とテキストを横に並べるスタイル */
+.dropdown-menu .d-flex img {
+    margin-right: 10px; /* 画像とテキストの間にスペースを追加 */
+}
+
+/* ナビゲーションリンクのスタイル */
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+/* 画像が小さい場合、上下中央寄せにするスタイル */
+.dropdown-menu .d-flex img {
+    margin-top: 3px;
+}
+
+
+
+/* ビデオ部分 */
+/* クラスを使って親要素のスタイルを設定 */
+.full-width {
+    width: 100%;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 垂直方向の中央配置を追加 */
+}
+
+.top::before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+/* video-slide クラスの初期スタイル */
+.video-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* 初期状態では非表示 */
+    clip-path: circle(0% at 0 50%);
+    transition: opacity 2s ease, clip-path 2s ease;
+
+}
+
+/* active クラスが付いた video-slide 要素のスタイル */
+.video-slide.active {
+    opacity: 1; /* アクティブなビデオは表示 */
+    clip-path: circle(150% at 0 50%); /* クリッピング効果を適用 */
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 40px; /* 左側に20pxの余白を追加 */
+    transform: translateY(-50%); /* 垂直方向の中央配置はそのまま */
+    text-align: left; /* テキストを左寄せに設定 */
+    color: white;
+}
+
+.content h1 {
+    font-size: 2.5em; /* テキストの大きさを調整 */
+    font-weight: bold; /* テキストを太字に設定 */
+}
+
+.content p {
+    font-size: 1.2em;
+    text-align: left; /* テキストを左寄せに設定 */
+    max-width: 500px; /* テキストの最大幅を設定 */
+}
+
+.slider-nav {
+    z-index: 888;
+    position: absolute; /* 相対配置から絶対配置に変更 */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* 通常のボタンスタイル（押されていない状態） */
+.slider-nav .nav-btn {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.075);
+    transition: 0.3s ease;
+    margin: 0 5px;
+}
+
+.slider-nav .nav-btn.active{
+    background: #e95420;
+}
+
+/* ボタンがホバーされたときのスタイル */
+.slider-nav .nav-btn:hover {
+    background: #e95420;
+    transform: scale(1.1);
+}
+
+.highlight-text {
+    font-weight: bold;
+    color: #e95420;
+}
+
+/* おすすめレシピ */
+.service .icon{
+    display: grid;
+    align-content: center;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    color:var(--bs-warning);
+    font-size: 34px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+/* ホバー時のアニメーション */
+.service {
+    transition: transform 0.3s; /* アニメーションの時間を調整できます */
+}
+
+.service:hover {
+    transform: scale(1.02); /* ホバー時に画像を拡大 */
+}
+
+
+.recipe-title{
+    background-color: rgba(240, 240, 240, 0.9); /* より濃い白の背景 */
+    padding: 5px; /* 適切なパディングを設定 */
+}
+
+
+/* 背景画像 */
+.background-wrapper {
+    background-image: url('/imgs/bg1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(50%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* 登録および編集画面のカスタムCSS */
+.custom-input {
+    display: inline-block;
+    width: calc(31.9%); /* 幅を調整することができます */
+    margin-right: 1px;
+}
+
+
+/* 材料一覧画面ののCSS */
+.table-container {
+    max-height: 400px; /* スクロールの最大高さを設定 */
+    overflow-y: auto; /* 垂直スクロールを有効にする */
+}
+
+.table-container table {
+    width: 100%; /* テーブル幅を100%に設定 */
+}
+
+.table-container thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* ヘッダーの背景色を設定 */
+}
