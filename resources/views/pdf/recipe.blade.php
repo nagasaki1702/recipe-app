@@ -39,7 +39,13 @@
 <body>
     <div class="recipe-info">
         <h1>{{ $recipe->title }}</h1>
-        <img src="{{ public_path('storage/recipe_images/' . basename($recipe->image)) }}" alt="{{ $recipe->title }}" class="img-thumbnail" style="width: 22rem;">
+        @if ($recipe->image)
+            <img src="{{ public_path('storage/recipe_images/' . basename($recipe->image)) }}" alt="{{ $recipe->title }}" class="img-thumbnail" style="width: 22rem;">
+        @else
+        <!-- 画像が存在しない場合は、代替の「noimage」画像を表示 -->
+            <img src="{{ public_path('imgs/no-image.png') }}" alt="No Image" class="img-thumbnail" style="width: 22rem;">
+        @endif
+
         <div>{{ $recipe->description }}</div>
 
 
