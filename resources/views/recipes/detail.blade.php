@@ -7,7 +7,12 @@
         <div class="col-md-8">
             <div class="recipe-info">
                 <div class="text-center">
-                    <img src="{{ asset('storage/recipe_images/' . basename($recipe->image)) }}" alt="{{ $recipe->title }}" class="img-thumbnail" style="width: 22rem;">
+                    @if ($recipe->image)
+                        <img src="{{ asset('storage/recipe_images/' . basename($recipe->image)) }}" alt="{{ $recipe->title }}" class="img-thumbnail" style="width: 22rem;">
+                    @else
+                    <!-- 画像が存在しない場合は、代替の「noimage」画像を表示 -->
+                        <img src="{{ asset('imgs/no-image.png') }}" alt="No Image" class="img-thumbnail" style="width: 22rem;">
+                    @endif
                 </div>
                 <h2 class="text-center">{{ $recipe->title }}</h2>
 
@@ -87,7 +92,7 @@
                     <textarea class="form-control" id="comment" name="comment" rows="4"></textarea>
                 </div>
                 <div class="text-center mt-2 mb-3">
-                    <button type="submit" class="btn btn-primary">　投 稿　</button>
+                    <button type="submit" class="btn btn-primary"> 投 稿 </button>
                 </div>
             </form>
         </div>

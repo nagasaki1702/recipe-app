@@ -32,7 +32,4 @@ class PdfController extends Controller
         // PDFをダウンロードまたは表示
         return $pdf->download('recipe.pdf');
     }
-
-
-    
 }

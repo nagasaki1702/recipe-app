@@ -26,7 +26,4 @@ class CommentController extends Controller
     
         return redirect()->back()->with('success', 'コメントが投稿されました。');
     }
-
-
-
 }
