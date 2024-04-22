@@ -134,7 +134,7 @@
                                     <div class="dropdown-menu" data-bs-popper="static">
                                         {{-- キーワードテーブルに材料名を登録するために、材料一覧を表示して、登録フォームも表示する --}}
                                         {{-- 使用するコントローラーはキーワードコントローラー --}}
-                                        <a class="nav-link active" href="{{ route('ingredients.index') }}">バッジ登録</a>
+                                        {{-- <a class="nav-link active" href="{{ route('ingredients.index') }}">バッジ登録</a> --}}
                                         {{-- キーワードテーブルに登録された材料名を表示し、それを編集する画面を表示する --}}
                                         {{-- なので、ひとまず使用するコントローラーはキーワードコントローラー --}}
                                         <a class="nav-link active" href="{{ route('keywords.edit') }}">バッジ編集</a>
