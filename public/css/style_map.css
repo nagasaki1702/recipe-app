@@ -28,7 +28,7 @@ a {
 }
 a:hover {
 	text-decoration: none;
-	color: #0E2D96;
+	color: gray;
 	transition: 0.3s all;
 }
 .clearfix:after {
