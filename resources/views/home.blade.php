@@ -93,6 +93,7 @@
                     <span class="badge rounded-pill bg-primary my-1 me-1">ヘルシー！</span>
                     <span class="badge rounded-pill bg-primary my-1 me-1">あともう一品！</span>
                 </div>
+                
             </div>
         </div>
     </div>

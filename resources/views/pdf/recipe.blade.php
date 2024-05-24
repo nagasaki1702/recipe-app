@@ -49,9 +49,16 @@
         <div>{{ $recipe->description }}</div>
 
 
-        <div>これは日本語のテキストです。</div>
+        {{-- <div>これは日本語のテキストです。</div> --}}
+        <div class="ingredients">
+            <h2>材料:</h2>
+            <div>
+                @foreach($recipe->ingredients as $ingredient)
+                    <div>{{ $ingredient }}</div>
+                @endforeach
+            </div>
+        </div>
 
-        <div>ssssssss</div>
     </div>
 </body>
 </html>

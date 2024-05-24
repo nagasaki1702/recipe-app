@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="text-center" style="width: 100%;">
-                    <button type="submit" class="btn btn-primary mt-3">　登 録　</button>
+                    <button type="submit" class="btn btn-primary mt-3">登 録</button>
                 </div>
             </form>
         </div>

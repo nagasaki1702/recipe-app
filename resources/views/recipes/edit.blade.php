@@ -50,7 +50,7 @@
 
 
                 <div class="text-center" style="width: 100%;">
-                    <button type="submit" class="btn btn-primary mt-3">　更 新　</button>
+                    <button type="submit" class="btn btn-primary mt-3">更 新</button>
                 </div>
             </form>
         </div>
