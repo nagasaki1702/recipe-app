@@ -57,16 +57,39 @@
 
     <div class="row justify-content-end">
         <div class="col-md-7">
-            <div class="row justify-content-center">
-                @foreach($randomImages as $key => $randomImage)
-                        <div class="me-1 m-2 service border-hover p-4 shadow" style="background-image: url('{{ asset('storage/recipe_images/' . basename($randomImage->image)) }}'); background-size: cover; width: 15rem; height: 15rem;">
+            <div class="container">
+                @php
+                    $displayedImages = 0;
+                @endphp
+                @foreach($randomImages as $randomImage)
+                    @if(!empty($randomImage->image))
+                        @if($displayedImages % 3 == 0)
+                            <div class="row justify-content-center mb-3"> <!-- 新しい行 -->
+                        @endif
+            
+                        <div class="col-md-5 m-2 service border-hover p-1 shadow" style="background-image: url('{{ asset('storage/recipe_images/' . basename($randomImage->image)) }}'); background-size: cover; width: 14rem; height: 14rem;">
                         </div>
-                    @if($key === 5) <!-- 3枚の画像を表示 -->
-                        @break
+            
+                        @php
+                            $displayedImages++;
+                        @endphp
+            
+                        @if($displayedImages % 3 == 0)
+                            </div> <!-- 行を閉じる -->
+                        @endif
+            
+                        @if($displayedImages == 6) <!-- 合計で6枚の画像を表示 -->
+                            @break
+                        @endif
                     @endif
                 @endforeach
+            
+                @if($displayedImages % 3 != 0) <!-- 最後の行を閉じる -->
+                    </div>
+                @endif
             </div>
-        </div>
+            
+                                </div>
             {{-- 分割する線 --}}
             <div class="col-md-1 d-none d-md-block mx-2" style="width: 0;">
                 <div class="mx-2" style="border-right: 1px solid rgba(0, 0, 0, 0.08); height: 100%"></div>
