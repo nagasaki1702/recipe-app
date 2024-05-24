@@ -64,27 +64,28 @@
                 @foreach($randomImages as $randomImage)
                     @if(!empty($randomImage->image))
                         @if($displayedImages % 3 == 0)
-                            <div class="row justify-content-center mb-3"> <!-- 新しい行 -->
+                            <div class="row justify-content-center mb-3"> 
                         @endif
             
-                        <div class="col-md-5 m-2 service border-hover p-1 shadow" style="background-image: url('{{ asset('storage/recipe_images/' . basename($randomImage->image)) }}'); background-size: cover; width: 14rem; height: 14rem;">
-                        </div>
+                        <a href="{{ route('recipes.detail', $randomImage->id) }}" class="col-md-4 me-1 m-2 service border-hover p-4 shadow" style="background-image: url('{{ asset('storage/recipe_images/' . basename($randomImage->image)) }}'); background-size: cover; width: 14rem; height: 14rem;">
+                            <!-- 空のdivにリンクを設置 -->
+                        </a>
             
                         @php
                             $displayedImages++;
                         @endphp
             
                         @if($displayedImages % 3 == 0)
-                            </div> <!-- 行を閉じる -->
+                            </div>
                         @endif
             
-                        @if($displayedImages == 6) <!-- 合計で6枚の画像を表示 -->
+                        @if($displayedImages == 6)
                             @break
                         @endif
                     @endif
                 @endforeach
             
-                @if($displayedImages % 3 != 0) <!-- 最後の行を閉じる -->
+                @if($displayedImages % 3 != 0)
                     </div>
                 @endif
             </div>
