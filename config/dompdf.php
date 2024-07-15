@@ -6,7 +6,9 @@ return array(
     'convert_entities' => true,
     'options' => array(
         // この２行がちゃんと指定されていなかったから？？'fonts/'がおかしかったのかな？今となってはわからぬ・・
-        'fontDir' => storage_path('fonts/'), 
+        'font_dir' => storage_path('fonts/'), 
+        // 0622追記
+        'font_dir' => public_path('fonts/'),
         'font_cache' => storage_path('fonts/'),
         // この２行がちゃんと指定されていなかったから？？'fonts/'がおかしかったのかな？今となってはわからぬ・・
         'temp_dir' => sys_get_temp_dir(),

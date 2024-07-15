@@ -60,6 +60,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/{recipeId}/rate', [RecipeController::class, 'rateRecipe'])->name('recipe.rate');
         Route::get('/{recipe}/average-rating', [RecipeRatingController::class, 'calculateAverageRating'])->name('recipe.average-rating');
         Route::get('/search', [RecipeController::class, 'search'])->name('recipes.search');
+        
         // PDFで印刷画面出す
         Route::get('/{recipeId}/pdf', [PdfController::class, 'generatePDF'])->name('recipe.pdf');
         Route::get('/{recipeId}/download-pdf', [PdfController::class, 'generatePDF'])->name('recipe.download-pdf');

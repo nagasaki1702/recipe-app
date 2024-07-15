@@ -15,23 +15,33 @@
         }
         /* dompdf日本語文字化け対策 */
         /* フォントをみんなipagに設定しておかないと日本語にならない・・ */
+        /* ノーマルの場合 */
         @font-face {
             font-family: 'ipag';
             font-style: normal;
             font-weight: normal;
-            src: url('{{ storage_path('fonts/ipag.ttf') }}') format('truetype');
+            src: url('{{ public_path('fonts/ipag.ttf') }}') format('truetype');
         }
+        /* 太文字の場合 */
+        /* どちらも設定しないとエラーになる */
         @font-face {
             font-family: 'ipag';
             font-style: bold;
             font-weight: bold;
-            src: url('{{ storage_path('fonts/ipag.ttf') }}') format('truetype');
+            src: url('{{ public_path('fonts/ipag.ttf') }}') format('truetype');
         }
         body {
             font-family: 'ipag', 'Arial', sans-serif;
         }
         html, body, textarea {
             font-family: 'ipag', 'Arial', sans-serif;
+        }
+        .ingredients {
+            text-align: center;
+        }
+        .ingredients-list {
+            display: inline-block;
+            text-align: left;
         }
     </style>
 </head>
@@ -46,15 +56,13 @@
             <img src="{{ public_path('imgs/no-image.png') }}" alt="No Image" class="img-thumbnail" style="width: 22rem;">
         @endif
 
-        <div>{{ $recipe->description }}</div>
+        <h3>{{ $recipe->description }}</h3>
 
-
-        {{-- <div>これは日本語のテキストです。</div> --}}
         <div class="ingredients">
-            <h2>材料:</h2>
+            <h3>材料:</h3>
             <div>
                 @foreach($recipe->ingredients as $ingredient)
-                    <div>{{ $ingredient }}</div>
+                <div>{{ $ingredient->name }}: {{ $ingredient->quantity }} {{ $ingredient->unit }}</div>
                 @endforeach
             </div>
         </div>

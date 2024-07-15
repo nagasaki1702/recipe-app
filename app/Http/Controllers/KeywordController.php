@@ -80,6 +80,7 @@ class KeywordController extends Controller
         // バリデーションが必要であれば追加
         $request->validate([
             // ここに適切なバリデーションルールを追加
+            
         ]);
 
         // キーワードを更新

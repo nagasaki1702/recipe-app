@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Recipe;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf; // 追記
 
 
 

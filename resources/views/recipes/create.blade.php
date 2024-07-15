@@ -54,7 +54,7 @@
                     <img src="{{ asset('storage/recipe_images/' . basename($randomImage->image)) }}" alt="" class="img-thumbnail mx-auto" style="width: 20rem; height: 20rem; display: block;">
                 </div>
             @else
-                <img src="{{ asset('imgs/no-image.png') }}" alt="デフォルト画像" class="img-thumbnail mx-auto" style="width: 400px; height: 400px; display: block;">
+                <img src="{{ asset('public/imgs/no-image.png') }}" alt="デフォルト画像" class="img-thumbnail mx-auto" style="width: 400px; height: 400px; display: block;">
             @endif        
         </div>
     </div>
